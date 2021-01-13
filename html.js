@@ -14,10 +14,10 @@ module.exports = function (url) {
       })
 
       await page.waitFor(1000)   
-      const html = await page.content(); 
+      const content = await page.content(); 
       await browser.close()
 
-      resolve(html)
+      resolve(content)
     })()
   })
 }
