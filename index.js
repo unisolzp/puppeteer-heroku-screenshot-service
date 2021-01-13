@@ -1,17 +1,16 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 3131
-const screenshot = require('./screenshot')
+const html = require('./html')
 
 app.get('/', (req, res) => res.status(200).json({ status: 'ok' }))
 
-app.get('/screenshot', (req, res) => {
+app.get('/html', (req, res) => {
   const url = req.query.url
   ;(async () => {
-    const buffer = await screenshot(url)
-    res.setHeader('Content-Disposition', 'attachment; filename="screenshot.png"')
-    res.setHeader('Content-Type', 'image/png')
-    res.send(buffer)
+    const content = await html(url)
+    res.setHeader('Content-Type', 'html/text')
+    res.send(content)
   })()
 })
 
