@@ -1,7 +1,7 @@
 {
-    "name": "Screenshot Service",
-    "description": "Puppeteer based website screenshot service on Heroku",
-    "repository": "https://github.com/fabiofranchino/puppeteer-heroku-screenshot-service",
+    "name": "Html Service",
+    "description": "Puppeteer based website html service on Heroku",
+    "repository": "https://github.com/unisolzp/puppeteer-heroku-screenshot-service",
     "keywords": ["node", "express", "puppeteer"],
     "buildpacks": [
         {
