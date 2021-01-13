@@ -13,18 +13,11 @@ module.exports = function (url) {
         waitUntil: ['load', 'networkidle0', 'domcontentloaded']
       })
 
-      await page.waitFor(1000)
-
-      await page.emulateMedia('screen')
-
-      const buffer = await page.screenshot({
-        fullPage: true,
-        type: 'png'
-      })
-
+      await page.waitFor(1000)   
+      const html = await page.content(); 
       await browser.close()
 
-      resolve(buffer)
+      resolve(html)
     })()
   })
 }
